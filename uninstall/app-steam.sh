@@ -1,1 +1,1 @@
-sudo apt remove -y steam steam-launcher
+flatpak uninstall -y flathub com.valvesoftware.Steam

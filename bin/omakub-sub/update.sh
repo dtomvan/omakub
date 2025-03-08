@@ -1,10 +1,8 @@
 CHOICES=(
 	"Omakub        Update Omakub itself and run any migrations"
 	"Ollama        Run LLMs, like Meta's Llama3, locally"
-	"LazyGit       TUI for Git"
-	"LazyDocker    TUI for Docker"
-	"Neovim        Text editor that runs in the terminal"
-	"Zellij        Adds panes, tabs, and sessions to the terminal"
+    "Nix           Apps installed through the Nix backend"
+    "Flatpak       Apps installed through the Flatpak backend"
 	"<< Back       "
 )
 
@@ -18,8 +16,9 @@ else
 
 	case "$INSTALLER" in
 	"omakub") INSTALLER_FILE="$OMAKUB_PATH/bin/omakub-sub/migrate.sh" ;;
-	"localsend") INSTALLER_FILE="$OMAKUB_PATH/install/desktop/app-localsend.sh" ;;
 	"ollama") INSTALLER_FILE="$OMAKUB_PATH/install/terminal/optional/app-ollama.sh" ;;
+	"nix") INSTALLER_FILE="$OMAKUB_PATH/bin/omakub-sub/update-nix.sh" ;;
+	"flatpak") INSTALLER_FILE="$OMAKUB_PATH/bin/omakub-sub/update-flatpak.sh" ;;
 	*) INSTALLER_FILE="$OMAKUB_PATH/install/terminal/app-$INSTALLER.sh" ;;
 	esac
 

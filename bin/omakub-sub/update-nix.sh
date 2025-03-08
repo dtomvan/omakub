@@ -1,0 +1,1 @@
+nix profile upgrade --all

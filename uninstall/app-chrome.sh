@@ -1,1 +1,1 @@
-sudo apt remove -y google-chrome-stable
+nix profile remove google-chrome

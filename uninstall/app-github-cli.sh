@@ -1,1 +1,1 @@
-sudo apt remove -y gh
+nix profile remove gh

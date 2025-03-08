@@ -1,1 +1,1 @@
-sudo apt remove -y xournalpp
+nix profile remove xournalpp

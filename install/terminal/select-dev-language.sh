@@ -20,11 +20,9 @@ if [[ -n "$languages" ]]; then
       mise use --global go@latest
       ;;
     PHP)
-      sudo add-apt-repository -y ppa:ondrej/php
-      sudo apt -y install php8.4 php8.4-{curl,apcu,intl,mbstring,opcache,pgsql,mysql,sqlite3,redis,xml,zip}
-      php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-      php composer-setup.php --quiet && sudo mv composer.phar /usr/local/bin/composer
-      rm composer-setup.php
+      nix profile install nixpkgs#php84 \
+          nixpkgs#php84Extensions.{curl,apcu,intl,mbstring,opcache,pgsql,mysqli,mysqlnd,pdo_mysql,redis,xml,zip} \
+          nixpkgs#php84Packages.composer
       ;;
     Python)
       mise use --global python@latest
@@ -35,7 +33,7 @@ if [[ -n "$languages" ]]; then
       mise x elixir -- mix local.hex --force
       ;;
     Rust)
-      bash -c "$(curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs)" -- -y
+      nix profile install nixpkgs#rustup
       ;;
     Java)
       mise use --global java@latest

@@ -1,1 +1,1 @@
-sudo apt remove -y obs-studio
+flatpak uninstall -y flathub com.obsproject.Studio

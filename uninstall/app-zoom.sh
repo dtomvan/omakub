@@ -1,1 +1,1 @@
-sudo apt remove -y zoom
+nix profile remove zoom-us

@@ -1,1 +1,1 @@
-sudo apt install -y xournalpp
+nix profile install nixpkgs#xournalpp

@@ -1,1 +1,1 @@
-sudo apt remove -y vlc
+nix profile remove vlc

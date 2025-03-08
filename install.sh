@@ -1,8 +1,18 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+# ... except let's not waste the user's hard drive space
+cleannixstore () {
+    echo "Collecting garbage in the nix store..."
+    nh clean all -k 3 --nogcroots
+}
+trap cleannixstore EXIT
+
 # Check the distribution name and version and abort if incompatible
 source ~/.local/share/omakub/install/check-version.sh
+
+# Install nix before starting the choose sequence
+source ~/.local/share/omakub/install/terminal/required/app-nix.sh >/dev/null
 
 # Ask for app choices
 echo "Get ready to make a few choices..."

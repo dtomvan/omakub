@@ -1,1 +1,1 @@
-sudo apt remove -y localsend
+nix profile remove localsend

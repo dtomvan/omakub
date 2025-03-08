@@ -1,6 +1,8 @@
 echo "Downloading the VirtIO drivers to ~/Downloads"
-mkdir -p ~/Downloads
-wget -O ~/Downloads/virtio-win-0.1.240.iso https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.240-1/virtio-win-0.1.240.iso
+mkdir -p ~/Downloads/
+# The virtio-win package extracts the ISO, so let's just "build" (ie. retrieve)
+# the source ISO from fedora through nixpkgs (which helps us use a up-to-date version)
+nix build --out-link ~/Downloads/virtio-win.iso nixpkgs#virtio-win.src
 
 echo "Download the Windows 11 ISO..."
 open https://www.microsoft.com/software-download/windows11

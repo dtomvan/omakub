@@ -1,1 +1,1 @@
-curl https://zed.dev/install.sh | sh
+nix profile install nixpkgs#zed-editor

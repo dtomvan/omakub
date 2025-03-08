@@ -1,1 +1,1 @@
-sudo apt install -y vlc
+nix profile install nixpkgs#vlc
