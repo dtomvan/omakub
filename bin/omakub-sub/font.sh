@@ -11,7 +11,7 @@ set_font() {
         mkdir -p ~/.local/share/fonts
 		cp "$file_name"/*."$file_type" ~/.local/share/fonts
 		rm -rf "$file_name.zip" "$file_name"
-		fc-cache
+		fc-cache -frv
 		cd -
 		clear
 		source $OMAKUB_PATH/ascii.sh
