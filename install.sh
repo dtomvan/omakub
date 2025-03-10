@@ -13,6 +13,7 @@ source ~/.local/share/omakub/install/check-version.sh
 
 # Install nix before starting the choose sequence
 source ~/.local/share/omakub/install/terminal/required/app-nix.sh >/dev/null
+source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
 # Ask for app choices
 echo "Get ready to make a few choices..."
