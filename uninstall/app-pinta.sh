@@ -1,1 +1,1 @@
-sudo snap remove pinta
+nix profile remove pinta

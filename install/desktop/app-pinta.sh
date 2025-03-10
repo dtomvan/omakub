@@ -1,2 +1,1 @@
-# FIXME: Get this out of snap
-sudo snap install pinta
+nix profile install nixpkgs#pinta
