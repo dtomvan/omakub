@@ -15,6 +15,10 @@ source ~/.local/share/omakub/install/check-version.sh
 source ~/.local/share/omakub/install/terminal/required/app-nix.sh >/dev/null
 source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
+# Disable apparmor as most nix apps don't work with it (profiles have /usr/bin
+# in it and bwrap is used for a lot of electron apps)
+source ~/.local/share/omakub/install/disable-apparmor.sh
+
 # Ask for app choices
 echo "Get ready to make a few choices..."
 source ~/.local/share/omakub/install/terminal/required/app-gum.sh >/dev/null
