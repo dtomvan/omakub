@@ -7,4 +7,6 @@ chmod +x ./nix-installer
 rm ./nix-installer
 cd -
 
+source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+
 nix profile install nixpkgs#nh
